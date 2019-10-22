@@ -62,7 +62,57 @@ $(window).load(function() {
 
                     
 
+function addElement () { 
+    // create a new div element 
+    var newDiv = document.createElement("div"); 
+    newDiv.className += "form-group";
+    // and give it some content 
+    var newLable = document.createElement("LABEL")
+    newLable.textContent = "Build your question";
+    
+    var newQuestion = document.createElement("TEXTAREA"); 
+    newQuestion.className += "form-control";
+    newQuestion.placeholder = "Your question here";
+    newQuestion.rows = "1";
 
+    var qTypeOptions = document.createElement("SELECT");
+    qTypeOptions.className += "form-control";
+
+    var op1 = document.createElement("option");
+    var ty1 = document.createTextNode("**Select response type");
+    op1.appendChild(ty1);
+
+    var op2 = document.createElement("option");
+    var ty2 = document.createTextNode("Multipal choice");
+    op2.appendChild(ty2);
+
+    var op3 = document.createElement("option");
+    var ty3 = document.createTextNode("Scale 1 to 5");
+    op3.appendChild(ty3);
+
+    var op4 = document.createElement("option");
+    var ty4 = document.createTextNode("Fill in the blank");
+    op4.appendChild(ty4);
+
+    var op5 = document.createElement("option");
+    var ty5 = document.createTextNode("Clickable image");
+    op5.appendChild(ty5);
+
+
+    qTypeOptions.appendChild(op1);
+    qTypeOptions.appendChild(op2);
+    qTypeOptions.appendChild(op3);
+    qTypeOptions.appendChild(op4);
+    qTypeOptions.appendChild(op5);
+
+    // // add the text node to the newly created div
+    newDiv.appendChild(newLable);  
+    newDiv.appendChild(newQuestion);
+    newDiv.appendChild(qTypeOptions);
+
+    // add the newly created element and its content into the DOM 
+    document.getElementById("newSurvey").appendChild(newDiv);
+}
 
 
 
